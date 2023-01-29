@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:project/3dfour.dart';
 import 'package:project/arscreen1.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ObjectDetail2 extends StatelessWidget {
   const ObjectDetail2({Key key}) : super(key: key);
@@ -150,10 +150,10 @@ class Object extends StatelessWidget {
                               ..onTap = () async {
                                 var url =
                                     "https://byjus.com/free-ias-prep/alien-invasive-species-upsc-notes/#:~:text=%20Some%20commonly%20found%20alien%20species%3A%20%201,for%20destroying%20the%20fish%20population%20in...%20More%20";
-                                if (await canLaunch(url)) {
-                                  await launch(url);
+                                if (await canLaunchUrlString(url)) {
+                                  await launchUrlString(url);
                                 } else {
-                                  throw 'Could not launch $url';
+                                  throw 'Could not launchUrlString $url';
                                 }
                               }),
                       ]))),
@@ -201,10 +201,10 @@ class Object extends StatelessWidget {
                               ..onTap = () async {
                                 var url =
                                     "https://www.youtube.com/watch?v=jpaHRQl6wG0";
-                                if (await canLaunch(url)) {
-                                  await launch(url);
+                                if (await canLaunchUrlString(url)) {
+                                  await launchUrlString(url);
                                 } else {
-                                  throw 'Could not launch $url';
+                                  throw 'Could not launchUrlString $url';
                                 }
                               }),
                       ]))),

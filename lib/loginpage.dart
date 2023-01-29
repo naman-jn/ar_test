@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:project/homepage.dart';
 
-
-
-class introsignup extends StatefulWidget {
-  const introsignup({Key key}) : super(key: key);
+class IntroSignUp extends StatefulWidget {
+  const IntroSignUp({Key key}) : super(key: key);
 
   @override
-  _introsignupState createState() => _introsignupState();
+  IntroSignUpState createState() => IntroSignUpState();
 }
 
-class _introsignupState extends State<introsignup> {
+class IntroSignUpState extends State<IntroSignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,28 +17,28 @@ class _introsignupState extends State<introsignup> {
       body: Row(
         children: [
           Container(
-            width: MediaQuery.of(context).size.width*0.3,
+            width: MediaQuery.of(context).size.width * 0.3,
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage('images/sideImg.png'),
-                    fit: BoxFit.cover
-                )
-            ),
+                    fit: BoxFit.cover)),
           ),
           Container(
-            width: MediaQuery.of(context).size.width*0.7,
-            padding: EdgeInsets.symmetric(vertical: 60,horizontal: 20),
+            width: MediaQuery.of(context).size.width * 0.7,
+            padding: EdgeInsets.symmetric(vertical: 60, horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("05:00 PM",style: TextStyle(
-                        fontSize: 30,
-                        fontFamily: 'avenir',
-                        fontWeight: FontWeight.w500
-                    ),),
+                    Text(
+                      DateFormat("HH:mm").format(DateTime.now()).toString(),
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'avenir',
+                          fontWeight: FontWeight.w500),
+                    ),
                     Expanded(
                       child: Container(),
                     ),
@@ -49,22 +48,24 @@ class _introsignupState extends State<introsignup> {
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage('images/cloud.png'),
-                              fit: BoxFit.contain
-                          )
-                      ),
+                              fit: BoxFit.contain)),
                     ),
-                    SizedBox(width: 5,),
-                    Text("27 C", style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'avenir',
-                        fontWeight: FontWeight.w800
-                    ),)
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      "21° C",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'avenir',
+                          fontWeight: FontWeight.w800),
+                    )
                   ],
                 ),
-                Text("Aug 1, 2021 | Sunday", style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey
-                ),),
+                Text(
+                  "${DateFormat("E, d MMM yyyy").format(DateTime.now()).toString()}",
+                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                ),
                 Expanded(
                   child: Container(
                     child: Column(
@@ -77,19 +78,22 @@ class _introsignupState extends State<introsignup> {
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: AssetImage('images/logo.png'),
-                                  fit: BoxFit.contain
-                              )
-                          ),
+                                  fit: BoxFit.contain)),
                         ),
-                        Text("TeachAR", style: TextStyle(
-                            fontSize: 35,
-                            fontFamily: 'ubuntu',
-                            fontWeight: FontWeight.w600
-                        ),),
-                        SizedBox(height: 10,),
-                        Text("Hi, \nSign Up. \nAnd Have Fun. \n\nJoin For Free", style: TextStyle(
-                            color: Colors.grey
-                        ),)
+                        Text(
+                          "TeachAR",
+                          style: TextStyle(
+                              fontSize: 35,
+                              fontFamily: 'ubuntu',
+                              fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Hi, \nSign Up. \nAnd Have Fun. \n\nJoin For Free",
+                          style: TextStyle(color: Colors.grey),
+                        )
                       ],
                     ),
                   ),
@@ -106,18 +110,23 @@ class _introsignupState extends State<introsignup> {
                     padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
                         color: Color(0xffffac30),
-                        borderRadius: BorderRadius.all(Radius.circular(20))
-                    ),
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
                     child: Center(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Sign Up", style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700
-                          ),),
-                          SizedBox(width: 4,),
-                          Icon(Icons.arrow_forward, size: 17,)
+                          Text(
+                            "Sign Up",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w700),
+                          ),
+                          SizedBox(
+                            width: 4,
+                          ),
+                          Icon(
+                            Icons.arrow_forward,
+                            size: 17,
+                          )
                         ],
                       ),
                     ),
@@ -127,9 +136,9 @@ class _introsignupState extends State<introsignup> {
                   height: 10,
                 ),
                 Center(
-                  child: Text("Create an account", style: TextStyle(
-                      fontSize: 16
-                  ),
+                  child: Text(
+                    "Create an account",
+                    style: TextStyle(fontSize: 16),
                   ),
                 ),
               ],

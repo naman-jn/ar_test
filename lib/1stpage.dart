@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:project/3done.dart';
 import 'package:project/arscreen1.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ObjectDetail extends StatelessWidget {
   const ObjectDetail({Key key}) : super(key: key);
@@ -153,7 +154,7 @@ class Object extends StatelessWidget {
                                 if (await canLaunchUrl(Uri.parse(url))) {
                                   await launchUrl(Uri.parse(url));
                                 } else {
-                                  throw 'Could not launch $url';
+                                  throw 'Could not launchUrlString $url';
                                 }
                               }),
                       ]))),
@@ -201,10 +202,10 @@ class Object extends StatelessWidget {
                               ..onTap = () async {
                                 var url =
                                     "https://www.youtube.com/watch?v=glFIw1HgH9w";
-                                if (await canLaunch(url)) {
-                                  await launch(url);
+                                if (await canLaunchUrlString(url)) {
+                                  await launchUrlString(url);
                                 } else {
-                                  throw 'Could not launch $url';
+                                  throw 'Could not launchUrlString $url';
                                 }
                               }),
                       ]))),

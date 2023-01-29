@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:model_viewer/model_viewer.dart';
 import 'package:flutter/material.dart';
 

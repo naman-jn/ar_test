@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:project/3dthree.dart';
 import 'package:project/arscreen1.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ObjectDetail4 extends StatelessWidget {
   const ObjectDetail4({Key key}) : super(key: key);
@@ -150,10 +150,10 @@ class Object extends StatelessWidget {
                               ..onTap = () async {
                                 var url =
                                     "https://en.wikipedia.org/wiki/Chicken";
-                                if (await canLaunch(url)) {
-                                  await launch(url);
+                                if (await canLaunchUrlString(url)) {
+                                  await launchUrlString(url);
                                 } else {
-                                  throw 'Could not launch $url';
+                                  throw 'Could not launchUrlString $url';
                                 }
                               }),
                       ]))),
@@ -201,10 +201,10 @@ class Object extends StatelessWidget {
                               ..onTap = () async {
                                 var url =
                                     "https://www.youtube.com/watch?v=wYKJkHcaMzE";
-                                if (await canLaunch(url)) {
-                                  await launch(url);
+                                if (await canLaunchUrlString(url)) {
+                                  await launchUrlString(url);
                                 } else {
-                                  throw 'Could not launch $url';
+                                  throw 'Could not launchUrlString $url';
                                 }
                               }),
                       ]))),
@@ -222,8 +222,7 @@ class Object extends StatelessWidget {
                     width: 140,
                     height: 50.0,
                     margin: EdgeInsets.all(10),
-                    // ignore: deprecated_member_use
-                    child: ElevatedButton(
+                    child: TextButton(
                       onPressed: () {
                         Navigator.of(context).push(PageRouteBuilder(
                             pageBuilder: (context, animation, _) {
@@ -256,8 +255,7 @@ class Object extends StatelessWidget {
                     width: 140,
                     height: 50.0,
                     margin: EdgeInsets.all(10),
-                    // ignore: deprecated_member_use
-                    child: ElevatedButton(
+                    child: TextButton(
                       onPressed: () {
                         Navigator.push(
                             context,

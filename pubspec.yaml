@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -33,9 +33,15 @@ dependencies:
   path_provider: ^2.0.11
   flutter_archive: ^4.1.1
   url_launcher: ^6.0.10
-  arcore_flutter_plugin: ^0.1.0-null-safety.3
+  arcore_flutter_plugin:
+    git:
+      url: https://github.com/naman-jn/arcore_flutter_plugin.git
+      ref: nullable-fix
   model_viewer: ^0.8.1
   permission_handler: ^10.2.0
+  ar_flutter_plugin: ^0.7.3
+  intl: ^0.18.0
+  firebase_core: ^2.4.1
 
 dev_dependencies:
   flutter_test:
@@ -46,7 +52,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -54,10 +59,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - images/
-     - model/
-     - assets/
-     - assets/jet/
+    - images/
+    - model/
+    - assets/
+    - assets/jet/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

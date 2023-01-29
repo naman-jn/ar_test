@@ -66,7 +66,6 @@ class _AugmentedImagesState extends State<AugmentedImages> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
 
     arCoreController.dispose();

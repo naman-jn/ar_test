@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project/loginpage.dart';
 void main() {
@@ -98,7 +97,7 @@ class _MyhomepageState extends State<Myhomepage> {
                           Navigator.push(
                               context,
                               new MaterialPageRoute(
-                                  builder: (__) => introsignup()));
+                                  builder: (__) => IntroSignUp()));
                         },
                         icon: Icon(
                           Icons.arrow_forward_ios,

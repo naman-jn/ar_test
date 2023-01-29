@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:project/3dtwo.dart';
 import 'package:project/arscreen3.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ObjectDetail3 extends StatelessWidget {
   const ObjectDetail3({Key key}) : super(key: key);
@@ -150,10 +150,10 @@ class Object extends StatelessWidget {
                               ..onTap = () async {
                                 var url =
                                     "https://en.wikipedia.org/wiki/Solar_System";
-                                if (await canLaunch(url)) {
-                                  await launch(url);
+                                if (await canLaunchUrlString(url)) {
+                                  await launchUrlString(url);
                                 } else {
-                                  throw 'Could not launch $url';
+                                  throw 'Could not launchUrlString $url';
                                 }
                               }),
                       ]))),
@@ -201,10 +201,10 @@ class Object extends StatelessWidget {
                               ..onTap = () async {
                                 var url =
                                     "https://www.youtube.com/watch?v=libKVRa01L8&t=3s";
-                                if (await canLaunch(url)) {
-                                  await launch(url);
+                                if (await canLaunchUrlString(url)) {
+                                  await launchUrlString(url);
                                 } else {
-                                  throw 'Could not launch $url';
+                                  throw 'Could not launchUrlString $url';
                                 }
                               }),
                       ]))),
