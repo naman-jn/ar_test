@@ -1,7 +1,7 @@
 import 'package:model_viewer/model_viewer.dart';
 import 'package:flutter/material.dart';
 
-class Alien3d extends StatelessWidget {
+class Planet3d extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

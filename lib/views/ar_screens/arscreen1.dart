@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:ar_flutter_plugin/managers/ar_location_manager.dart';
 import 'package:ar_flutter_plugin/managers/ar_session_manager.dart';
 import 'package:ar_flutter_plugin/managers/ar_object_manager.dart';
@@ -10,6 +9,7 @@ import 'package:ar_flutter_plugin/ar_flutter_plugin.dart';
 import 'package:ar_flutter_plugin/datatypes/config_planedetection.dart';
 import 'package:ar_flutter_plugin/datatypes/node_types.dart';
 import 'package:ar_flutter_plugin/models/ar_node.dart';
+import 'package:project/loginpage.dart';
 import 'package:vector_math/vector_math_64.dart';
 import 'dart:math';
 import 'package:path_provider/path_provider.dart';
@@ -61,7 +61,8 @@ class _LocalAndWebObjectsWidgetState extends State<LocalAndWebObjectsWidget> {
                     children: [
                       ElevatedButton(
                           onPressed: onFileSystemObjectAtOriginButtonPressed,
-                          child: Text("Add/Remove Filesystem\nObject at Origin")),
+                          child:
+                              Text("Add/Remove Filesystem\nObject at Origin")),
                     ],
                   ),
                   Row(
@@ -118,7 +119,7 @@ class _LocalAndWebObjectsWidgetState extends State<LocalAndWebObjectsWidget> {
         "https://firebasestorage.googleapis.com/v0/b/stridenseek.appspot.com/o/files%2FAR_Models%2FAlien.glb?alt=media&token=fffd9db1-dcc5-4dae-bb1f-95d7ea867817",
         "Alien.glb");
     // Alternative to use type fileSystemAppFolderGLTF2:
-    //_downloadAndUnpack(
+    //downloadAndUnpack(
     //    "https://drive.google.com/uc?export=download&id=1fng7yiK0DIR0uem7XkV2nlPSGH9PysUs",
     //    "Chicken_01.zip");
   }
@@ -134,7 +135,7 @@ class _LocalAndWebObjectsWidgetState extends State<LocalAndWebObjectsWidget> {
     return file;
   }
 
-  Future<void> _downloadAndUnpack(String url, String filename) async {
+  Future<void> downloadAndUnpack(String url, String filename) async {
     var request = await httpClient.getUrl(Uri.parse(url));
     var response = await request.close();
     var bytes = await consolidateHttpClientResponseBytes(response);
@@ -177,7 +178,7 @@ class _LocalAndWebObjectsWidgetState extends State<LocalAndWebObjectsWidget> {
       var newNode = ARNode(
           type: NodeType.webGLB,
           uri:
-          "https://firebasestorage.googleapis.com/v0/b/stridenseek.appspot.com/o/files%2FAR_Models%2FAlien.glb?alt=media&token=fffd9db1-dcc5-4dae-bb1f-95d7ea867817",
+              "https://firebasestorage.googleapis.com/v0/b/stridenseek.appspot.com/o/files%2FAR_Models%2FAlien.glb?alt=media&token=fffd9db1-dcc5-4dae-bb1f-95d7ea867817",
           scale: Vector3(0.2, 0.2, 0.2));
       bool didAddWebNode = await this.arObjectManager.addNode(newNode);
       this.webObjectNode = (didAddWebNode) ? newNode : null;
@@ -186,9 +187,11 @@ class _LocalAndWebObjectsWidgetState extends State<LocalAndWebObjectsWidget> {
 
   Future<void> onFileSystemObjectAtOriginButtonPressed() async {
     if (this.fileSystemNode != null) {
+      logger.d("removing alien.glb --- button 1");
       this.arObjectManager.removeNode(this.fileSystemNode);
       this.fileSystemNode = null;
     } else {
+      logger.d("alien.glb --- button 1");
       var newNode = ARNode(
           type: NodeType.fileSystemAppFolderGLB,
           uri: "Alien.glb",

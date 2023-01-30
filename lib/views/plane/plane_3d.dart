@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cube/flutter_cube.dart';
 
-class HomePage extends StatefulWidget {
+class Plane3d extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _Plane3dState createState() => _Plane3dState();
 }
 
-class _HomePageState extends State<HomePage> {
-
+class _Plane3dState extends State<Plane3d> {
   Object jet;
   Object shark;
   @override
@@ -28,7 +27,6 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         child: Column(
           children: [
-
             Expanded(
               child: Cube(
                 onSceneCreated: (Scene scene) {

@@ -1,11 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:project/3dthree.dart';
-import 'package:project/arscreen1.dart';
+import 'package:project/views/alien/alien_3d.dart';
+import 'package:project/views/ar_screens/arscreen1.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class ObjectDetail4 extends StatelessWidget {
-  const ObjectDetail4({Key key}) : super(key: key);
+class AlienDetailScreen extends StatelessWidget {
+  const AlienDetailScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class Object extends StatelessWidget {
                     //you can set more BoxShadow() here
                   ],
                 ),
-                child: Image.asset('images/chickenimg.png')),
+                child: Image.asset('images/alienimg.png')),
             SizedBox(
               height: 11,
             ),
@@ -93,7 +93,7 @@ class Object extends StatelessWidget {
               ),
               child: SingleChildScrollView(
                 child: Text(
-                  "The chicken (Gallus domesticus) is a domesticated bird, with attributes of wild species such as the red and grey junglefowl [1] that are originally from Southeastern Asia. Rooster or cock is a term for an adult male bird, and a younger male may be called a cockerel. A male that has been castrated is a capon. An adult female bird is called a hen and a sexually immature female is called a pullet.",
+                  "An alien species is a species introduced outside its normal distribution. According to experts, alien species become ‘invasive’ when they are introduced deliberately or accidentally outside their natural areas, where they out-compete the native species and upset the ecological balance.The most common characteristics of invasive species are rapid reproduction and growth, high dispersal ability, ability to survive on various food types, and in a wide range of environmental conditions and the ability to adapt physiologically to new conditions, called phenotypic plasticity.The alien invasive species are non-native to an ecosystem. They may cause economic or environmental harm or even adversely affect human health.",
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
@@ -149,7 +149,7 @@ class Object extends StatelessWidget {
                             recognizer: TapGestureRecognizer()
                               ..onTap = () async {
                                 var url =
-                                    "https://en.wikipedia.org/wiki/Chicken";
+                                    "https://byjus.com/free-ias-prep/alien-invasive-species-upsc-notes/#:~:text=%20Some%20commonly%20found%20alien%20species%3A%20%201,for%20destroying%20the%20fish%20population%20in...%20More%20";
                                 if (await canLaunchUrlString(url)) {
                                   await launchUrlString(url);
                                 } else {
@@ -200,7 +200,7 @@ class Object extends StatelessWidget {
                             recognizer: TapGestureRecognizer()
                               ..onTap = () async {
                                 var url =
-                                    "https://www.youtube.com/watch?v=wYKJkHcaMzE";
+                                    "https://www.youtube.com/watch?v=jpaHRQl6wG0";
                                 if (await canLaunchUrlString(url)) {
                                   await launchUrlString(url);
                                 } else {
@@ -226,7 +226,7 @@ class Object extends StatelessWidget {
                       onPressed: () {
                         Navigator.of(context).push(PageRouteBuilder(
                             pageBuilder: (context, animation, _) {
-                              return Chicken3d();
+                              return Alien3d();
                             },
                             opaque: false));
                       },

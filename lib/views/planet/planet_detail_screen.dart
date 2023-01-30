@@ -1,12 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:project/3done.dart';
-import 'package:project/arscreen1.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:project/views/ar_screens/arscreen3.dart';
+import 'package:project/views/planet/planet_3d.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class ObjectDetail extends StatelessWidget {
-  const ObjectDetail({Key key}) : super(key: key);
+class SolarPlanetDetailScreen extends StatelessWidget {
+  const SolarPlanetDetailScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +58,7 @@ class Object extends StatelessWidget {
                     //you can set more BoxShadow() here
                   ],
                 ),
-                child: Image.asset('images/jett.png')),
+                child: Image.asset('images/solardetail.png')),
             SizedBox(
               height: 11,
             ),
@@ -94,7 +93,7 @@ class Object extends StatelessWidget {
               ),
               child: SingleChildScrollView(
                 child: Text(
-                  "In the 18th century, Isaac Newton was the first to theorize that a rearward-channeled explosion could propel a machine forward at a great rate of speedA jet propulsion system which used piston-engine exhaust gases to add heat to an otherwise pure air stream compressed by rotating fan blades in a duct was patented by Henri Coanda in 1910.A jet aircraft flies much faster at higher altitudes as high as 33,000–49,000 ft, than a propeller-powered aircraft.",
+                  "The Solar System formed 4.6 billion years ago from the gravitational collapse of a giant interstellar molecular cloud. The vast majority of the system's mass is in the Sun, with the majority of the remaining mass contained in Jupiter. The four inner system planets – Mercury, Venus, Earth and Mars – are terrestrial planets, being composed primarily of rock and metal. The four giant planets of the outer system are substantially more massive than the terrestrials. The two largest planets, Jupiter and Saturn, are gas giants, being composed mainly of hydrogen and helium; the next two, Uranus and Neptune, are ice giants, being composed mostly of substances with relatively high melting points compared with hydrogen and helium, called volatiles, such as water, ammonia and methane. All eight have nearly circular orbits that lie close to the plane of the Earth's orbit, called the ecliptic.",
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
@@ -150,9 +149,9 @@ class Object extends StatelessWidget {
                             recognizer: TapGestureRecognizer()
                               ..onTap = () async {
                                 var url =
-                                    "https://en.wikipedia.org/wiki/Jet_aircraft";
-                                if (await canLaunchUrl(Uri.parse(url))) {
-                                  await launchUrl(Uri.parse(url));
+                                    "https://en.wikipedia.org/wiki/Solar_System";
+                                if (await canLaunchUrlString(url)) {
+                                  await launchUrlString(url);
                                 } else {
                                   throw 'Could not launchUrlString $url';
                                 }
@@ -201,7 +200,7 @@ class Object extends StatelessWidget {
                             recognizer: TapGestureRecognizer()
                               ..onTap = () async {
                                 var url =
-                                    "https://www.youtube.com/watch?v=glFIw1HgH9w";
+                                    "https://www.youtube.com/watch?v=libKVRa01L8&t=3s";
                                 if (await canLaunchUrlString(url)) {
                                   await launchUrlString(url);
                                 } else {
@@ -223,12 +222,11 @@ class Object extends StatelessWidget {
                     width: 140,
                     height: 50.0,
                     margin: EdgeInsets.all(10),
-                    // ignore: deprecated_member_use
-                    child: ElevatedButton(
+                    child: TextButton(
                       onPressed: () {
                         Navigator.of(context).push(PageRouteBuilder(
                             pageBuilder: (context, animation, _) {
-                              return HomePage();
+                              return Planet3d();
                             },
                             opaque: false));
                       },
@@ -257,12 +255,12 @@ class Object extends StatelessWidget {
                     width: 140,
                     height: 50.0,
                     margin: EdgeInsets.all(10),
-                    child: ElevatedButton(
+                    child: TextButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             new MaterialPageRoute(
-                                builder: (__) => LocalAndWebObjectsWidget()));
+                                builder: (__) => AugmentedImages()));
                       },
                       child: Ink(
                         decoration: BoxDecoration(

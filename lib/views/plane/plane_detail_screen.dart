@@ -1,11 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:project/3dfour.dart';
-import 'package:project/arscreen1.dart';
+import 'package:project/views/plane/plane_3d.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class ObjectDetail2 extends StatelessWidget {
-  const ObjectDetail2({Key key}) : super(key: key);
+import '../ar_screens/arscreen1.dart';
+
+class PlaneDetailScreen extends StatelessWidget {
+  const PlaneDetailScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +60,7 @@ class Object extends StatelessWidget {
                     //you can set more BoxShadow() here
                   ],
                 ),
-                child: Image.asset('images/alienimg.png')),
+                child: Image.asset('images/jett.png')),
             SizedBox(
               height: 11,
             ),
@@ -93,7 +95,7 @@ class Object extends StatelessWidget {
               ),
               child: SingleChildScrollView(
                 child: Text(
-                  "An alien species is a species introduced outside its normal distribution. According to experts, alien species become ‘invasive’ when they are introduced deliberately or accidentally outside their natural areas, where they out-compete the native species and upset the ecological balance.The most common characteristics of invasive species are rapid reproduction and growth, high dispersal ability, ability to survive on various food types, and in a wide range of environmental conditions and the ability to adapt physiologically to new conditions, called phenotypic plasticity.The alien invasive species are non-native to an ecosystem. They may cause economic or environmental harm or even adversely affect human health.",
+                  "In the 18th century, Isaac Newton was the first to theorize that a rearward-channeled explosion could propel a machine forward at a great rate of speedA jet propulsion system which used piston-engine exhaust gases to add heat to an otherwise pure air stream compressed by rotating fan blades in a duct was patented by Henri Coanda in 1910.A jet aircraft flies much faster at higher altitudes as high as 33,000–49,000 ft, than a propeller-powered aircraft.",
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
@@ -149,9 +151,9 @@ class Object extends StatelessWidget {
                             recognizer: TapGestureRecognizer()
                               ..onTap = () async {
                                 var url =
-                                    "https://byjus.com/free-ias-prep/alien-invasive-species-upsc-notes/#:~:text=%20Some%20commonly%20found%20alien%20species%3A%20%201,for%20destroying%20the%20fish%20population%20in...%20More%20";
-                                if (await canLaunchUrlString(url)) {
-                                  await launchUrlString(url);
+                                    "https://en.wikipedia.org/wiki/Jet_aircraft";
+                                if (await canLaunchUrl(Uri.parse(url))) {
+                                  await launchUrl(Uri.parse(url));
                                 } else {
                                   throw 'Could not launchUrlString $url';
                                 }
@@ -200,7 +202,7 @@ class Object extends StatelessWidget {
                             recognizer: TapGestureRecognizer()
                               ..onTap = () async {
                                 var url =
-                                    "https://www.youtube.com/watch?v=jpaHRQl6wG0";
+                                    "https://www.youtube.com/watch?v=glFIw1HgH9w";
                                 if (await canLaunchUrlString(url)) {
                                   await launchUrlString(url);
                                 } else {
@@ -222,12 +224,11 @@ class Object extends StatelessWidget {
                     width: 140,
                     height: 50.0,
                     margin: EdgeInsets.all(10),
-                    // ignore: deprecated_member_use
-                    child: ElevatedButton(
+                    child: TextButton(
                       onPressed: () {
                         Navigator.of(context).push(PageRouteBuilder(
                             pageBuilder: (context, animation, _) {
-                              return Alien3d();
+                              return Plane3d();
                             },
                             opaque: false));
                       },
@@ -256,8 +257,7 @@ class Object extends StatelessWidget {
                     width: 140,
                     height: 50.0,
                     margin: EdgeInsets.all(10),
-                    // ignore: deprecated_member_use
-                    child: ElevatedButton(
+                    child: TextButton(
                       onPressed: () {
                         Navigator.push(
                             context,

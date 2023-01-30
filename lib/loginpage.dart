@@ -1,6 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:logger/logger.dart';
 import 'package:project/homepage.dart';
+
+var logger = Logger(
+  filter: null,
+  printer: PrettyPrinter(
+    methodCount: 0, // number of method calls to be displayed
+    errorMethodCount: 5, // number of method calls if stacktrace is provided
+    lineLength: 20, // width of the output
+    colors: false, // Colorful log messages
+    printEmojis: true, // Print an emoji for each log message
+    printTime: false, // Should each log print contain a timestamp
+    noBoxingByDefault: false, // show boxes for each log
+    excludeBox: {Level.verbose: false}, //hide box for specific logs
+  ),
+);
 
 class IntroSignUp extends StatefulWidget {
   const IntroSignUp({Key key}) : super(key: key);
@@ -102,7 +117,7 @@ class IntroSignUpState extends State<IntroSignUp> {
                   onTap: () {
                     Navigator.of(context).push(PageRouteBuilder(
                         pageBuilder: (context, animation, _) {
-                          return Intro();
+                          return HomePage();
                         },
                         opaque: false));
                   },
@@ -150,6 +165,6 @@ class IntroSignUpState extends State<IntroSignUp> {
   }
 // void openHomePage()
 // {
-//   Navigator.pushNamed(context, '/Intro');
+//   Navigator.pushNamed(context, '/HomePage');
 // }
 }

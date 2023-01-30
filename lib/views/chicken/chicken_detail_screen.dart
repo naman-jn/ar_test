@@ -1,11 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:project/3dtwo.dart';
-import 'package:project/arscreen3.dart';
+import 'package:project/views/ar_screens/arscreen1.dart';
+import 'package:project/views/chicken/chicken_3d.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class ObjectDetail3 extends StatelessWidget {
-  const ObjectDetail3({Key key}) : super(key: key);
+class ChickenDetailScreen extends StatelessWidget {
+  const ChickenDetailScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class Object extends StatelessWidget {
                     //you can set more BoxShadow() here
                   ],
                 ),
-                child: Image.asset('images/solardetail.png')),
+                child: Image.asset('images/chickenimg.png')),
             SizedBox(
               height: 11,
             ),
@@ -93,7 +93,7 @@ class Object extends StatelessWidget {
               ),
               child: SingleChildScrollView(
                 child: Text(
-                  "The Solar System formed 4.6 billion years ago from the gravitational collapse of a giant interstellar molecular cloud. The vast majority of the system's mass is in the Sun, with the majority of the remaining mass contained in Jupiter. The four inner system planets – Mercury, Venus, Earth and Mars – are terrestrial planets, being composed primarily of rock and metal. The four giant planets of the outer system are substantially more massive than the terrestrials. The two largest planets, Jupiter and Saturn, are gas giants, being composed mainly of hydrogen and helium; the next two, Uranus and Neptune, are ice giants, being composed mostly of substances with relatively high melting points compared with hydrogen and helium, called volatiles, such as water, ammonia and methane. All eight have nearly circular orbits that lie close to the plane of the Earth's orbit, called the ecliptic.",
+                  "The chicken (Gallus domesticus) is a domesticated bird, with attributes of wild species such as the red and grey junglefowl [1] that are originally from Southeastern Asia. Rooster or cock is a term for an adult male bird, and a younger male may be called a cockerel. A male that has been castrated is a capon. An adult female bird is called a hen and a sexually immature female is called a pullet.",
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
@@ -149,7 +149,7 @@ class Object extends StatelessWidget {
                             recognizer: TapGestureRecognizer()
                               ..onTap = () async {
                                 var url =
-                                    "https://en.wikipedia.org/wiki/Solar_System";
+                                    "https://en.wikipedia.org/wiki/Chicken";
                                 if (await canLaunchUrlString(url)) {
                                   await launchUrlString(url);
                                 } else {
@@ -200,7 +200,7 @@ class Object extends StatelessWidget {
                             recognizer: TapGestureRecognizer()
                               ..onTap = () async {
                                 var url =
-                                    "https://www.youtube.com/watch?v=libKVRa01L8&t=3s";
+                                    "https://www.youtube.com/watch?v=wYKJkHcaMzE";
                                 if (await canLaunchUrlString(url)) {
                                   await launchUrlString(url);
                                 } else {
@@ -222,12 +222,11 @@ class Object extends StatelessWidget {
                     width: 140,
                     height: 50.0,
                     margin: EdgeInsets.all(10),
-                    // ignore: deprecated_member_use
-                    child: ElevatedButton(
+                    child: TextButton(
                       onPressed: () {
                         Navigator.of(context).push(PageRouteBuilder(
                             pageBuilder: (context, animation, _) {
-                              return Alien3d();
+                              return Chicken3d();
                             },
                             opaque: false));
                       },
@@ -256,13 +255,12 @@ class Object extends StatelessWidget {
                     width: 140,
                     height: 50.0,
                     margin: EdgeInsets.all(10),
-                    // ignore: deprecated_member_use
-                    child: ElevatedButton(
+                    child: TextButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             new MaterialPageRoute(
-                                builder: (__) => AugmentedImages()));
+                                builder: (__) => LocalAndWebObjectsWidget()));
                       },
                       child: Ink(
                         decoration: BoxDecoration(
