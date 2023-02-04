@@ -8,8 +8,8 @@ class Alien3d extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: Text("Model Viewer")),
         body: ModelViewer(
-          src: 'assets/Alien.glb',
-          alt: "A 3D model of an Earth",
+          src: 'assets/arduino_uno.glb',
+          alt: "A 3D model of an Alien",
           ar: true,
           autoRotate: true,
           cameraControls: true,

@@ -60,9 +60,10 @@ class _LocalAndWebObjectsWidgetState extends State<LocalAndWebObjectsWidget> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       ElevatedButton(
-                          onPressed: onFileSystemObjectAtOriginButtonPressed,
-                          child:
-                              Text("Add/Remove Filesystem\nObject at Origin")),
+                        onPressed: viewFromAssets,
+                        child: Text("View model from assets"),
+                        // Text("Add/Remove Filesystem\nObject at Origin"),
+                      ),
                     ],
                   ),
                   Row(
@@ -76,17 +77,17 @@ class _LocalAndWebObjectsWidgetState extends State<LocalAndWebObjectsWidget> {
                           child: Text("Add/Remove Web\nObject at Origin")),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ElevatedButton(
-                          onPressed: onLocalObjectShuffleButtonPressed,
-                          child: Text("Shuffle Local\nobject at Origin")),
-                      ElevatedButton(
-                          onPressed: onWebObjectShuffleButtonPressed,
-                          child: Text("Shuffle Web\nObject at Origin")),
-                    ],
-                  )
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  //   children: [
+                  //     ElevatedButton(
+                  //         onPressed: onLocalObjectShuffleButtonPressed,
+                  //         child: Text("Shuffle Local\nobject at Origin")),
+                  //     ElevatedButton(
+                  //         onPressed: onWebObjectShuffleButtonPressed,
+                  //         child: Text("Shuffle Web\nObject at Origin")),
+                  //   ],
+                  // )
                 ],
               ),
             ),
@@ -151,6 +152,25 @@ class _LocalAndWebObjectsWidgetState extends State<LocalAndWebObjectsWidget> {
       print("Unzipping successful");
     } catch (e) {
       print("Unzipping failed: " + e);
+    }
+  }
+
+  Future<void> viewFromAssets() async {
+    // 1
+    if (localObjectNode != null) {
+      arObjectManager.removeNode(localObjectNode);
+      localObjectNode = null;
+    } else {
+      // 2
+      var newNode = ARNode(
+          type: NodeType.localGLTF2,
+          uri: "assets/arduino_uno.glb",
+          scale: Vector3(0.2, 0.2, 0.2),
+          position: Vector3(0.0, 0.0, 0.0),
+          rotation: Vector4(1.0, 0.0, 0.0, 0.0));
+      // 3
+      bool didAddLocalNode = await arObjectManager.addNode(newNode);
+      localObjectNode = (didAddLocalNode) ? newNode : null;
     }
   }
 
