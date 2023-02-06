@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.project">
    <application
-        android:label="TeachAR"
+        android:label="My CS Buddy"
        android:icon="@mipmap/ic_launcher"
        android:usesCleartextTraffic="true">
         <activity
