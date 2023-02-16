@@ -5,8 +5,10 @@ import 'package:project/widgets/custom_app_bar.dart';
 class CustomModelViewer extends StatelessWidget {
   final String modelPath;
   final String modelName;
+  final String modelDescription;
 
-  const CustomModelViewer({Key key, this.modelPath, this.modelName})
+  const CustomModelViewer(
+      {Key key, this.modelPath, this.modelName, this.modelDescription})
       : super(key: key);
 
   @override
@@ -20,7 +22,7 @@ class CustomModelViewer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  height: 450,
+                  height: 400,
                   padding: EdgeInsets.only(top: 80),
                   decoration: BoxDecoration(
                     boxShadow: [
@@ -49,8 +51,8 @@ class CustomModelViewer extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Text(
-                    "dataClita lorem takimata consetetur no no ipsum consetetur diam amet, lorem ipsum invidunt magna at consetetur sit amet, eos magna elitr aliquyam takimata. Tempor amet stet eirmod gubergren sanctus accusam erat duo, amet sit duo amet et kasd tempor duo invidunt lorem. Et eos est clita stet ea vero dolores clita. Et consetetur justo magna at amet tempor, sit magna et dolores voluptua ea, accusam clita rebum amet clita no et vero et, et ipsum justo accusam consetetur aliquyam no diam takimata. Voluptua clita sed dolore justo amet sit voluptua, consetetur sadipscing sea erat accusam elitr dolores et aliquyam dolor,.",
-                    style: TextStyle(fontSize: 16),
+                    modelDescription,
+                    style: TextStyle(fontSize: 15),
                   ),
                 ),
                 Container(

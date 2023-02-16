@@ -7,11 +7,21 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15),
+    return Container(
+      margin: const EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12.withOpacity(0.1),
+            blurRadius: 4,
+          ),
+        ],
+      ),
       child: TextField(
         cursorColor: Colors.grey,
         decoration: InputDecoration(
+            isDense: true,
             fillColor: Colors.white,
             filled: true,
             border: OutlineInputBorder(

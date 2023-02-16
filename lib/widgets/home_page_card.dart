@@ -18,6 +18,7 @@ class HomePageCard extends StatelessWidget {
               return CustomModelViewer(
                 modelPath: Constants.modelList[index],
                 modelName: Constants.nameList[index],
+                modelDescription: Constants.modelDescriptionList[index],
               );
             },
             opaque: false));
