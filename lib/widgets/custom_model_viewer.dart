@@ -1,5 +1,6 @@
 import 'package:model_viewer/model_viewer.dart';
 import 'package:flutter/material.dart';
+import 'package:project/views/ar_screens/arscreen1.dart';
 import 'package:project/widgets/custom_app_bar.dart';
 
 class CustomModelViewer extends StatelessWidget {
@@ -55,26 +56,34 @@ class CustomModelViewer extends StatelessWidget {
                     style: TextStyle(fontSize: 15),
                   ),
                 ),
-                Container(
-                  height: 65,
-                  width: double.infinity,
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 25),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                      colors: [
-                        Colors.black45,
-                        Colors.black12.withOpacity(0.1),
-                      ],
+                InkWell(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LocalAndWebObjectsWidget(),
                     ),
-                    borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Center(
-                    child: Text(
-                      "View in Augmented Reality",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  child: Container(
+                    height: 65,
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(horizontal: 15, vertical: 25),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        colors: [
+                          Colors.black45,
+                          Colors.black12.withOpacity(0.1),
+                        ],
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "View in Augmented Reality",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                 )
