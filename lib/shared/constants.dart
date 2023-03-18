@@ -19,7 +19,6 @@ class Constants {
   static const List<String> modelList = [
     Assets.m_ryzenChip,
     Assets.m_desktop,
-    // Assets.m_floppyDisk,
     Assets.m_keyboard,
     Assets.m_motherboard,
     Assets.m_ram,
@@ -30,7 +29,6 @@ class Constants {
   static const List<String> ImageList = [
     Assets.i_ryzenChip,
     Assets.i_desktop,
-    // Assets.i_floppyDisk,
     Assets.i_keyboard,
     Assets.i_motherboard,
     Assets.i_ram,
@@ -41,7 +39,6 @@ class Constants {
   static const List<String> nameList = [
     "Ryzen Chip",
     "Desktop",
-    // "Floppy Disk",
     "Keyboard",
     "Motherboard",
     "RAM",
@@ -49,10 +46,19 @@ class Constants {
     "USB Drive",
   ];
 
+  static const List<String> arModels = [
+     Assets.ar_ryzenChip,
+    Assets.ar_desktop,
+    Assets.ar_keyboard,
+    Assets.ar_motherboard,
+    Assets.ar_ram,
+    Assets.ar_ssd,
+    Assets.ar_usbDrive,
+  ];
+
   static const List<String> modelDescriptionList = [
     "The AMD Ryzen chip is a family of microprocessors designed by AMD (Advanced Micro Devices) as a competitor to Intel's CPUs. The Ryzen chips are based on the Zen architecture, which offers improved performance and efficiency compared to AMD's previous processor designs. The Ryzen chips are known for their high core and thread count, making them ideal for multi-tasking and intensive workloads such as gaming, video editing, and content creation. They are also designed to work with high-speed DDR4 memory, providing faster data transfer rates for improved system performance. Overall, the AMD Ryzen chip has gained a strong reputation for its high performance, reliability, and value for money, making it a popular choice among both gamers and professionals alike.",
     "A desktop computer is a personal computer designed for use on a desk or workstation. It typically consists of a tower or case containing the main components such as the CPU, motherboard, memory, and storage, and peripherals such as a monitor, keyboard, and mouse. Desktop computers are known for their versatility, power, and upgradability, allowing users to customize their systems for specific needs and preferences. They are commonly used for a wide range of tasks, including gaming, content creation, office work, and browsing the internet. Desktop computers also have the advantage of being less expensive than their portable counterparts, and they generally offer better performance and larger storage capacities. With the increasing popularity of remote work and virtual meetings, desktop computers remain an important tool for productivity and communication in both personal and professional settings.",
-    // "Floppy Disk",
     "A keyboard is an essential input device used to input information and commands into a computer system. It is designed to resemble the layout of a traditional typewriter, with a set of keys that correspond to letters, numbers, and other characters. Keyboards can come in different shapes and sizes, with various features such as backlighting, wireless connectivity, and multimedia keys for controlling music and videos. They can also be optimized for specific tasks, such as gaming keyboards with extra programmable keys and mechanical switches for faster response times. With the growing popularity of mobile devices, keyboards have also become a popular accessory for tablets and smartphones. Overall, the keyboard remains an important tool for communication and productivity in the digital age, and advances in technology continue to make them more versatile and user-friendly.",
     "A motherboard is a circuit board that connects and controls all the other components of a computer system. It provides interfaces for the CPU, memory, storage, and other peripherals to communicate with each other. Motherboards also feature expansion slots and various technologies, making them more versatile and user-friendly. Choosing the right motherboard is essential for optimal performance and compatibility with other hardware components.",
     "RAM (Random Access Memory) is a type of computer memory that is used to temporarily store data that is being actively accessed by the CPU. It is a volatile memory, meaning that its contents are lost when the computer is turned off. RAM allows the CPU to access and retrieve data quickly, making it an essential component for the smooth operation of a computer system. The amount and speed of RAM can have a significant impact on the performance of a computer, with more RAM allowing for more applications to be run simultaneously and faster. Overall, RAM is a critical component of a computer system and plays an important role in determining its overall performance and capabilities.",

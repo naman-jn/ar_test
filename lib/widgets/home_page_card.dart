@@ -19,6 +19,7 @@ class HomePageCard extends StatelessWidget {
                 modelPath: Constants.modelList[index],
                 modelName: Constants.nameList[index],
                 modelDescription: Constants.modelDescriptionList[index],
+                modelAr: Constants.arModels[index],
               );
             },
             opaque: false));

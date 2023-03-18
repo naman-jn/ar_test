@@ -1,15 +1,16 @@
 import 'package:model_viewer/model_viewer.dart';
 import 'package:flutter/material.dart';
-import 'package:project/views/ar_screens/arscreen1.dart';
+import 'package:project/views/ar_screens/ar_test_screen.dart';
 import 'package:project/widgets/custom_app_bar.dart';
 
 class CustomModelViewer extends StatelessWidget {
   final String modelPath;
   final String modelName;
   final String modelDescription;
+  final String modelAr;
 
   const CustomModelViewer(
-      {Key key, this.modelPath, this.modelName, this.modelDescription})
+      {Key key, this.modelPath, this.modelName, this.modelDescription, this.modelAr})
       : super(key: key);
 
   @override
@@ -60,7 +61,7 @@ class CustomModelViewer extends StatelessWidget {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => LocalAndWebObjectsWidget(),
+                      builder: (context) => ArTestScreen(arModel: modelAr),
                     ),
                   ),
                   child: Container(
