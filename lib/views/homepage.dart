@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project/widgets/product_grid.dart';
-import 'package:project/widgets/search_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -13,7 +12,7 @@ class HomePage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SearchBar(),
+          // SearchBar(),
           ProductGrid(),
         ],
       ),
@@ -23,8 +22,7 @@ class HomePage extends StatelessWidget {
   AppBar _buildAppBar() {
     return AppBar(
         backgroundColor: Colors.white,
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         leading: SizedBox(),
         toolbarHeight: 70,
         centerTitle: true,
