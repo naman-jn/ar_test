@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:project/shared/colors.dart';
+import 'package:project/shared/constants.dart';
 import 'package:project/views/chapters_detail_screen.dart';
 
 class ChaptersListScreen extends StatelessWidget {
@@ -24,20 +26,25 @@ class ChaptersListScreen extends StatelessWidget {
             Expanded(
               child: ListView.builder(
                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
-                itemCount: 1,
+                itemCount: 6,
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ChaptersDetailScreen(),
-                        ),
-                      );
+                      if (index == 0) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChaptersDetailScreen(),
+                          ),
+                        );
+                      } else {
+                        Constants.toast("Coming Soon");
+                      }
                     },
                     child: Container(
                       height: 65,
                       padding: EdgeInsets.symmetric(horizontal: 15),
+                      margin: EdgeInsets.symmetric(vertical: 9),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           color: Colors.white,
@@ -70,11 +77,16 @@ class ChaptersListScreen extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(width: 10),
-                              Text(
-                                "Asemble a PC",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.6,
+                                child: Text(
+                                  Constants.chapterNameList[index],
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
                               ),
                             ],

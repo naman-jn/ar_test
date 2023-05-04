@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:logger/logger.dart';
 import 'package:project/shared/assets.dart';
 
@@ -24,6 +26,7 @@ class Constants {
     Assets.m_ram,
     Assets.m_ssd,
     Assets.m_usbDrive,
+    Assets.m_pc,
   ];
 
   static const List<String> ImageList = [
@@ -34,6 +37,7 @@ class Constants {
     Assets.i_ram,
     Assets.i_ssd,
     Assets.i_usb_drive,
+    Assets.i_pc,
   ];
 
   static const List<String> nameList = [
@@ -44,16 +48,18 @@ class Constants {
     "RAM",
     "SSD",
     "USB Drive",
+    "Personal Computer"
   ];
 
   static const List<String> arModels = [
-     Assets.ar_ryzenChip,
+    Assets.ar_ryzenChip,
     Assets.ar_desktop,
     Assets.ar_keyboard,
     Assets.ar_motherboard,
     Assets.ar_ram,
     Assets.ar_ssd,
     Assets.ar_usbDrive,
+    Assets.ar_pc,
   ];
 
   static const List<String> modelDescriptionList = [
@@ -64,5 +70,27 @@ class Constants {
     "RAM (Random Access Memory) is a type of computer memory that is used to temporarily store data that is being actively accessed by the CPU. It is a volatile memory, meaning that its contents are lost when the computer is turned off. RAM allows the CPU to access and retrieve data quickly, making it an essential component for the smooth operation of a computer system. The amount and speed of RAM can have a significant impact on the performance of a computer, with more RAM allowing for more applications to be run simultaneously and faster. Overall, RAM is a critical component of a computer system and plays an important role in determining its overall performance and capabilities.",
     "An SSD (Solid State Drive) is a type of storage device that has become increasingly popular in recent years due to its improved performance and reliability compared to traditional hard drives. Unlike traditional hard drives, which use spinning disks to read and write data, SSDs use NAND-based flash memory to store data. This allows them to provide faster read and write speeds, which can significantly improve the overall performance of a computer system. SSDs are also less prone to failure and are less affected by physical shock or vibration. They come in various form factors, such as 2.5-inch drives for laptops and desktops and M.2 drives for ultrabooks and other compact devices.",
     "A USB drive, also known as a flash drive or thumb drive, is a small portable storage device that uses flash memory to store and transfer data between computers and other devices. They are typically small and lightweight, making them easy to carry around in a pocket or bag. USB drives are commonly used for transferring files, backing up data, and sharing information between different computers or devices. They plug into a USB port and are available in various capacities ranging from a few gigabytes to several terabytes. USB drives have become a popular alternative to traditional optical media such as CDs and DVDs, and with the advent of USB 3.0 and USB-C, they offer faster data transfer speeds than ever before. Overall, USB drives are a convenient and versatile way to store and transfer data, making them an essential tool for many people in today's digital world.",
+    "Assembling a personal computer  involves selecting and purchasing individual components, such as a CPU, motherboard, RAM, storage drives, power supply, and a case, and then assembling them into a functional computer. It requires some technical knowledge and careful attention to detail, but there are many online resources and tutorials available to help guide you through the process. Assembling your own PC allows you to choose high-quality components, tailor the performance to your needs, and potentially save money compared to buying a pre-built computer from a manufacturer."
   ];
+
+  static const List<String> chapterNameList = [
+    "Assemble a PC",
+    "Logic Gates",
+    "Network Devices",
+    "LAN Connections",
+    "WAN and PAN Connections",
+    "Switches and their configurations",
+  ];
+
+  static void toast(String text) {
+    Fluttertoast.showToast(
+      msg: text,
+      toastLength: Toast.LENGTH_LONG,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Colors.black,
+      textColor: Colors.white,
+      fontSize: 16.0,
+    );
+  }
 }

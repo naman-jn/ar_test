@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/shared/colors.dart';
-import 'chapters_list_screen.dart';
+import 'package:project/views/chapters_list_screen.dart';
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({Key key}) : super(key: key);
