@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/shared/constants.dart';
-import 'package:project/widgets/custom_model_viewer.dart';
+import 'package:project/widgets/model_details_widget.dart';
 
 class HomePageCard extends StatelessWidget {
   final int index;
@@ -15,7 +15,7 @@ class HomePageCard extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(PageRouteBuilder(
             pageBuilder: (context, animation, _) {
-              return CustomModelViewer(
+              return ModelDetailsWidget(
                 modelPath: Constants.modelList[index],
                 modelName: Constants.nameList[index],
                 modelDescription: Constants.modelDescriptionList[index],

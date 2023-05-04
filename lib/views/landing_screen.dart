@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:project/shared/colors.dart';
-import 'package:project/views/homepage.dart';
+import 'chapters_list_screen.dart';
 
-class IntroSignUp extends StatefulWidget {
-  const IntroSignUp({Key key}) : super(key: key);
+class LandingScreen extends StatefulWidget {
+  const LandingScreen({Key key}) : super(key: key);
 
   @override
-  IntroSignUpState createState() => IntroSignUpState();
+  LandingScreenState createState() => LandingScreenState();
 }
 
-class IntroSignUpState extends State<IntroSignUp> {
+class LandingScreenState extends State<LandingScreen> {
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
@@ -38,7 +38,7 @@ class IntroSignUpState extends State<IntroSignUp> {
               onTap: () {
                 Navigator.of(context).push(PageRouteBuilder(
                     pageBuilder: (context, animation, _) {
-                      return HomePage();
+                      return ChaptersListScreen();
                     },
                     opaque: false));
               },
